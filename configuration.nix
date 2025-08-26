@@ -61,8 +61,10 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "de";
-    variant = "mac_nodeadkeys";
+    layout = "us";
+    variant = "altgr-intl";
+    #layout = "de";
+    #variant = "mac_nodeadkeys";
   };
 
   # Configure console keymap

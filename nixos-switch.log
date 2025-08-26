@@ -1,0 +1,23 @@
+warning: updating lock file '"/home/ntausend/myflake/flake.lock"':
+• Added input 'alejandra':
+    'github:kamadorueda/alejandra/3e2a85506627062313e131bf8a85315f3387c8e0?narHash=sha256-Oi1n2ncF4/AWeY6X55o2FddIRICokbciqFYK64XorYk%3D' (2025-04-10)
+• Added input 'alejandra/fenix':
+    'github:nix-community/fenix/efeb50e2535b17ffd4a135e6e3e5fd60a525180c?narHash=sha256-2HBR3zLn57LXKNRtxBb%2BO%2BuDqHM4n0pz51rPayMl4cg%3D' (2024-11-03)
+• Added input 'alejandra/fenix/nixpkgs':
+    follows 'alejandra/nixpkgs'
+• Added input 'alejandra/fenix/rust-analyzer-src':
+    'github:rust-lang/rust-analyzer/f17a5bbfd0969ba2e63a74505a80e55ecb174ed9?narHash=sha256-KNHZUlqsEibg3YtfUyOFQSofP8hp1HKoY%2BlaoesBxRM%3D' (2024-11-02)
+• Added input 'alejandra/flakeCompat':
+    'github:edolstra/flake-compat/0f9255e01c2351cc7d116c072cb317785dd33b33?narHash=sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U%3D' (2023-10-04)
+• Added input 'alejandra/nixpkgs':
+    follows 'nixpkgs'
+• Added input 'nixpkgs':
+    'github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4?narHash=sha256-HMwfAJBdrr8wXAkbGhtcby1zGFvs%2BStOp19xNsbqdOg%3D' (2025-08-19)
+building the system configuration...
+warning: Git tree '/home/ntausend/myflake' is dirty
+activating the configuration...
+setting up /etc...
+reloading user units for ntausend...
+restarting sysinit-reactivation.target
+the following new units were started: NetworkManager-dispatcher.service
+Done. The new configuration is /nix/store/zha95ywvl9zgn5lkwc6691323y3lkxc8-nixos-system-nixi-25.11.20250819.2007595
