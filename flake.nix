@@ -10,9 +10,15 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    lib = nixpkgs.lib;
+  in {
     nixosConfigurations = {
-      nixi = nixpkgs.lib.nixosSystem rec {
+      nixi = lib.nixosSystem rec {
         specialArgs = {inherit inputs;};
 
         system = "x86_64-linux";
