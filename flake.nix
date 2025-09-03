@@ -33,13 +33,13 @@
     #homeConfigurations."emtpy" = home-manager.lib.homeManagerConfiguration
 
     nixosConfigurations = {
-      nixi = lib.nixosSystem rec {
-        specialArgs = {inherit inputs;};
+      default = lib.nixosSystem rec {
+        extraSpecialArgs = {inherit inputs;};
 
         system = "x86_64-linux";
 
         modules = [
-          ./configuration.nix
+          ./hosts/default/configuration.nix
           home-manager.nixosModules.default
           #{
           #environment.systemPackages = [inputs.alejandra.defaultPackage.${system}
