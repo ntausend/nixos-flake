@@ -40,7 +40,7 @@
 
         modules = [
           ./configuration.nix
-          home-manager.nixosModules.home-manager
+          home-manager.nixosModules.default
           #{
           #environment.systemPackages = [inputs.alejandra.defaultPackage.${system}
           #  nixpkgs.legacyPackages.git];

@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -101,6 +102,15 @@
       # kdePackages.kate
     ];
   };
+
+  home-manager = {
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "ntausend" = import ./home.nix;
+    };
+  };
+  #home-manager.users.ntausend = import ./home.nix;
 
   security.sudo.extraRules = [
     {
