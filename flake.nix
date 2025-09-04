@@ -34,17 +34,13 @@
 
     nixosConfigurations = {
       default = lib.nixosSystem rec {
-        extraSpecialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs;};
 
         system = "x86_64-linux";
 
         modules = [
           ./hosts/default/configuration.nix
           home-manager.nixosModules.default
-          #{
-          #environment.systemPackages = [inputs.alejandra.defaultPackage.${system}
-          #  nixpkgs.legacyPackages.git];
-          #}
         ];
       };
     };

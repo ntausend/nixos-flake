@@ -1,8 +1,11 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
+  #imports = [../../modules/home-manager/alejandra.nix];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ntausend";
@@ -20,6 +23,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    inputs.alejandra.defaultPackage.${pkgs.system}
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -73,15 +77,22 @@
     # EDITOR = "emacs";
   };
 
+  # bash configurations
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -l";
+      ".." = "cd ..";
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 
   # this is just a test that you can generate some files!!
   # and that interpolation is working
   home.file."testdir/testfile".text = ''
     File with some amazing content!!!
-    
 
     Path to git is ${pkgs.git}/bin/git
   '';
