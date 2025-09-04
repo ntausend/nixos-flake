@@ -24,7 +24,7 @@
 
   # shell environments
 
-  environment.shells = with pkgs; [zsh bash ];
+  environment.shells = with pkgs; [zsh bash];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
