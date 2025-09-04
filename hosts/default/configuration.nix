@@ -22,6 +22,12 @@
 
   networking.hostName = "nixi"; # Define your hostname.
 
+  # shell environments
+
+  environment.shells = with pkgs; [zsh bash ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

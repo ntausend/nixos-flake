@@ -3,7 +3,14 @@
   pkgs,
   inputs,
   ...
-}: {
+}: 
+let
+  myAliases = {
+      ll = "ls -l";
+      ".." = "cd ..";
+    };
+in
+{
   #imports = [../../modules/home-manager/alejandra.nix];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -80,10 +87,12 @@
   # bash configurations
   programs.bash = {
     enable = true;
-    shellAliases = {
-      ll = "ls -l";
-      ".." = "cd ..";
-    };
+    shellAliases = myAliases;
+  };
+  # zsh configurations
+  programs.zsh = {
+    enable = true;
+    shellAliases = myAliases;
   };
 
   # Let Home Manager install and manage itself.
