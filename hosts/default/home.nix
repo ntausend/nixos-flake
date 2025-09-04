@@ -4,8 +4,11 @@
   inputs,
   ...
 }: {
-  imports = [../../modules/home-manager/sh.nix];
-  #imports = [../../modules/home-manager/alejandra.nix];
+  imports = [
+    ../../modules/home-manager/sh.nix
+    ../../modules/home-manager/alejandra.nix
+  ];
+  #imports = [];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -24,7 +27,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    inputs.alejandra.defaultPackage.${pkgs.system}
+    #inputs.alejandra.defaultPackage.${pkgs.system}
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
