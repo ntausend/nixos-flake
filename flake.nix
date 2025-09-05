@@ -27,37 +27,28 @@
     nixpkgs,
     home-manager,
     ...
-  } @ inputs: 
-  let
+  } @ inputs: let
     lib = nixpkgs.lib;
     # this should be simpler and could be outsourced, as one could handle different systems in the flake by name.. TODO
     # one could also handle this with a default config and a module, which loads the settings
-    systemSettings = {
-      system =  "x86_64-linux";
-      hostname = "nixi";
+    globalSystemSettings = {
+      system = "x86_64-linux";
       timezone = "Europe/Berlin";
+      i18n = "de_DE.UTF-8";
     };
   in {
-
     nixosConfigurations = {
-      nixi = lib.nixosSystem rec {
-        specialArgs = {inherit inputs; hostname = "nixi";};
+      macnix = lib.nixosSystem rec {
+        specialArgs = {
+          inherit inputs;
+          inherit globalSystemSettings;
+          hostname = "macnix";
+        };
 
-        system = systemSettings.system;
-
-        modules = [
-          ./hosts/default/configuration.nix
-          home-manager.nixosModules.default
-        ];
-      };
-
-      nixi_2 = lib.nixosSystem rec {
-        specialArgs = {inherit inputs; hostname = "nixi_2";};
-
-        system = systemSettings.system;
+        system = globalSystemSettings.system;
 
         modules = [
-          ./hosts/default/configuration.nix
+          ./hosts/imac/configuration.nix
           home-manager.nixosModules.default
         ];
       };
