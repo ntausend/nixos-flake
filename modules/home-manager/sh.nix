@@ -1,11 +1,13 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   myAliases = {
     ll = "ls -l";
     ".." = "cd ..";
+    neofetch = "fastfetch";
   };
 in {
   # bash configurations
@@ -17,5 +19,8 @@ in {
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
+    initContent = lib.mkOrder 1500 ''
+	fastfetch
+    '';
   };
 }

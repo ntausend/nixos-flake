@@ -29,6 +29,7 @@
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
+
     # this should be simpler and could be outsourced, as one could handle different systems in the flake by name.. TODO
     # one could also handle this with a default config and a module, which loads the settings
     globalSystemSettings = {

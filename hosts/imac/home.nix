@@ -7,6 +7,8 @@
   imports = [
     ../../modules/home-manager/sh.nix
     ../../modules/home-manager/alejandra.nix
+    ../../modules/home-manager/terminals/kitty.nix
+    ../../modules/home-manager/neofetch/neofetch.nix
   ];
   #imports = [];
 
@@ -77,7 +79,9 @@
   #  /etc/profiles/per-user/ntausend/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim"; # This has to be changed to nvim asap
+    BROWSER = "firefox";
+    TERMINAL = "kitty";
   };
 
   # Let Home Manager install and manage itself.

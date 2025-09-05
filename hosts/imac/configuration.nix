@@ -13,6 +13,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../defaults/internationalization.nix
+    ../defaults/bluetooth.nix
+    ../../fonts/default.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -21,8 +23,6 @@
   config = {
 
     # Bluetooth
-    hardware.bluetooth.enable = true;
-    services.blueman.enable   = true;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
