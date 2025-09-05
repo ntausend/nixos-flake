@@ -5,6 +5,7 @@
   config,
   pkgs,
   inputs,
+  hostname,
   ...
 }: {
   imports = [
@@ -20,7 +21,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixi"; # Define your hostname.
+  networking.hostName = hostname; # Define your hostname.
 
   # shell environments
 
