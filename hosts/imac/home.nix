@@ -17,6 +17,16 @@
   home.username = "ntausend";
   home.homeDirectory = "/home/ntausend";
 
+  # Git setup
+  programs.git = {
+    enable = true;
+    userName = config.home.username;
+    userEmail = "ntausend@proton.me";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
+  };
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

@@ -7,5 +7,8 @@
       size = 10;
     };
     themeFile = "Catppuccin-Macchiato";
+    settings = {
+      bold_font = "auto";
+    };
   };
 }

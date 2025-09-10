@@ -13,7 +13,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../defaults/internationalization.nix
-    ../defaults/bluetooth.nix
+    #../defaults/bluetooth.nix
     ../../fonts/default.nix
     inputs.home-manager.nixosModules.default
   ];

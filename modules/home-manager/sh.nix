@@ -15,6 +15,8 @@ in {
     enable = true;
     shellAliases = myAliases;
   };
+
+
   # zsh configurations
   programs.zsh = {
     enable = true;
@@ -23,4 +25,8 @@ in {
 	fastfetch
     '';
   };
+
+  
+  # oh-my-zsh configuration
+  home.packages = [pkgs.oh-my-zsh];
 }
