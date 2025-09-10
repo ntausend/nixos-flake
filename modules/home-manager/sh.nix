@@ -17,27 +17,30 @@ in {
   };
 
 
+  # TODO how to add plugins for zsh?
+  #home.packages = [pkgs.zsh-you-should-use];
+
   # zsh configurations
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
    
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "dirhistory"
-        "history"
-      ];
-    }; 
-
     shellAliases = myAliases;
     initContent = lib.mkOrder 1500 ''
-	fastfetch
+         fastfetch
     '';
   };
-
-  
-  # oh-my-zsh configuration
-  #home.packages = [pkgs.oh-my-zsh];
+  programs.zsh.oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        #"you-should-use"
+        #"zsh-bat"
+        #"dirhistory"
+        #"history"
+      ];
+      theme = "catppuccin-macchiato";
+    }; 
 }

@@ -9,6 +9,8 @@
     ../../modules/home-manager/alejandra.nix
     ../../modules/home-manager/terminals/kitty.nix
     ../../modules/home-manager/neofetch/neofetch.nix
+    ../../modules/home-manager/fzf/fzf.nix
+    ../../modules/home-manager/bat.nix
   ];
   #imports = [];
 
