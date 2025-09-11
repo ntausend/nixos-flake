@@ -41,6 +41,6 @@ in {
         #"dirhistory"
         #"history"
       ];
-      theme = "catppuccin-macchiato";
+      #theme = "catppuccin-macchiato";
     }; 
 }
