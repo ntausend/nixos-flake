@@ -15,5 +15,5 @@
   "hl+" = "#ED8796";
   "selected-bg" = "#494D64";
   "border" = "#6E738D";
-  "label" = "CAD3F5";
+  "label" = "#CAD3F5";
 }
