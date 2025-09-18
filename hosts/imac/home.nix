@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ../../modules/home-manager/sh.nix
+    ../../modules/home-manager/sh/sh.nix
     ../../modules/home-manager/alejandra.nix
     ../../modules/home-manager/terminals/kitty.nix
     ../../modules/home-manager/neofetch/neofetch.nix
